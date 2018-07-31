@@ -25,7 +25,9 @@
 
         <hr>
 
-        <EmitMessage />
+        <EmitMessage
+            @child-emit="childEmit"
+            @child-emit-message="childEmitMessage" />
     </div>
 </template>
 
@@ -63,6 +65,10 @@
 
         private childEmit() {
             console.log('Emitted!');
+        }
+
+        private childEmitMessage(obj: object) {
+            console.log(obj);
         }
 
         // computed
