@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1>Basic</h1>
         <p>Data propery: {{ message }}</p>
         <p>Computed property: {{ longMessage }}</p>
         <p>Method: <button @click="logMessage">Click Me!</button></p>
@@ -27,7 +28,12 @@
 
         <EmitMessage
             @child-emit="childEmit"
-            @child-emit-message="childEmitMessage" />
+            @child-emit-message="childEmitMessage"
+        />
+
+        <hr>
+
+        <MainRouting />
     </div>
 </template>
 
@@ -36,9 +42,13 @@
 
     import Parent from './Parent';
 
-    import PropMessage from './PropMessage.vue';
-    import InjectMessage from './InjectMessage.vue';
-    import EmitMessage from './EmitMessage.vue';
+    // Basic
+    import PropMessage from './basic/PropMessage.vue';
+    import InjectMessage from './basic/InjectMessage.vue';
+    import EmitMessage from './basic/EmitMessage.vue';
+
+    // Routing
+    import MainRouting from './routing/MainRouting.vue';
 
     // components
     @Component({
@@ -46,6 +56,7 @@
             PropMessage,
             InjectMessage,
             EmitMessage,
+            MainRouting,
         },
     })
 
@@ -96,5 +107,9 @@
 </script>
 
 <style>
+
+    hr {
+        margin: 15px 0;
+    }
 
 </style>
